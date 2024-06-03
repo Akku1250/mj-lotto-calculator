@@ -1,0 +1,293 @@
+/* 
+    CTA + Ribbon - #FC6200 
+    Foreground - #FFFFFF
+    Background - #4A4A4A
+    Header + Banner - #000000
+    Card + Table Content - #272727
+    Error: #ff4d4d
+*/
+
+:root {
+  font-family: 'Roboto', system-ui, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Colors  */
+  --background: #4a4a4a;
+  --foreground: rgba(255, 255, 255, 0.87);
+  --primary: #fc6200;
+  --content: #272727;
+  --header: #000000;
+  --border: #000000;
+  --error: #ff4d4d;
+  --button-hover: #e04000;
+  --table-row-hover: #191919;
+  --bg-cell-pulse: #696969;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  color: var(--foreground);
+  min-width: 320px;
+  min-height: 100vh;
+  padding: 0.625rem;
+}
+
+button {
+  background: var(--primary);
+  color: var(--foreground);
+  width: 8.75rem;
+  height: 2.625rem;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  padding: 0.625rem 1.25rem;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.02);
+}
+
+input {
+  padding: 0.625rem;
+  margin-bottom: 0.625rem;
+  width: 250px;
+}
+
+table {
+  width: 100%;
+  border-spacing: 1px;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+thead tr {
+  text-transform: uppercase;
+  background-color: var(--header);
+  text-align: left;
+}
+
+th {
+  height: 3rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+}
+
+th:nth-child(odd) {
+  width: 150px;
+}
+
+tbody tr {
+  border-bottom: 2px solid var(--border);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+tbody tr:hover {
+  background-color: var(--table-row-hover);
+  transform: scale(1.007);
+}
+
+td {
+  padding: 0.8rem;
+}
+
+td:nth-child(even)::before {
+  content: '';
+  position: absolute;
+  transform: translateX(-15px);
+  width: 2px;
+  height: 23px;
+  background-color: var(--border);
+}
+
+.lotto-calculator {
+  margin-top: -1.875rem;
+}
+
+.lotto-calculator__header {
+  background-color: var(--header);
+  position: relative;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding-left: 1.25rem;
+}
+
+.lotto-calculator__title {
+  font-weight: normal;
+  font-weight: 400;
+}
+
+.lotto-calculator__ribbon {
+  width: 110px;
+  height: 150px;
+  position: absolute;
+  overflow: hidden;
+  top: 0px;
+  right: 0px;
+}
+
+.lotto-calculator__ribbon-text {
+  background-color: var(--primary);
+  color: var(--foreground);
+  width: 170px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 30px;
+  right: -55px;
+  transform: rotate(45deg);
+}
+
+.lotto-calculator__content {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.9375rem;
+}
+
+.lotto-calculator__content-title {
+  background-color: var(--header);
+  padding: 0.625rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.lotto-calculator__content-info {
+  background-color: var(--content);
+  width: 450px;
+}
+
+.lotto-calculator__content-info-body {
+  padding: 0.9375rem;
+}
+
+.lotto-calculator__content-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lotto-calculator__form-container {
+  background-color: var(--content);
+  padding-left: 1.25rem;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lotto-calculator__form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.error-message {
+  color: var(--error);
+  margin-top: 0.625rem;
+}
+
+.lotto-calculator__table-container {
+  background-color: var(--content);
+  position: relative;
+  width: 100%;
+  overflow: auto;
+}
+
+.slide-in-row-0 {
+  animation: slideIn 0.5s ease-out;
+}
+
+.slide-in-row-1 {
+  animation: slideIn 0.6s ease-out;
+}
+
+.slide-in-row-2 {
+  animation: slideIn 0.7s ease-out;
+}
+
+.slide-in-row-3 {
+  animation: slideIn 0.8s ease-out;
+}
+
+.slide-in-row-4 {
+  animation: slideIn 0.9s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.skeleton {
+  animation: fade-in-out 1.5s infinite;
+}
+
+.cell-pulse {
+  height: 14px;
+  background-color: var(--bg-cell-pulse);
+  border-radius: 4px;
+  margin: 5px 0;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 600px) {
+  input {
+    width: 100%;
+  }
+  button {
+    width: 100%;
+  }
+
+  .lotto-calculator {
+    margin-top: 0;
+  }
+
+  .lotto-calculator__content {
+    flex-direction: column;
+  }
+
+  .lotto-calculator__content-info {
+    width: 100%;
+  }
+
+  .lotto-calculator__form-container {
+    height: 180px;
+    padding: 1.25rem;
+  }
+
+  .lotto-calculator__form {
+    justify-content: center;
+  }
+}

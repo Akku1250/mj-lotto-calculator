@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lotto Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="lotto-calculator">
+      <!-- Lotto Header-->
+      <header class="lotto-calculator__header">
+        <h2 class="lotto-calculator__title">Lotto Calculator</h2>
+        <div class="lotto-calculator__ribbon">
+          <span class="lotto-calculator__ribbon-text">New</span>
+        </div>
+      </header>
+      <!-- Lotto Content -->
+      <div class="lotto-calculator__content">
+        <!-- Content Info -->
+        <section class="lotto-calculator__content-info">
+          <h2 class="lotto-calculator__content-title">The Irish Lotto</h2>
+          <div>
+            <p class="lotto-calculator__content-info-body">
+              Since 16<sup>th</sup> April 1988, the Irish Lotto draw takes place every Saturday at 8pm. On 30<sup
+                >th</sup
+              >
+              May 1990 an additional Wednesday evening draw was introduced.
+            </p>
+            <p class="lotto-calculator__content-info-body">
+              Enter a date in the form to get the next three draw dates as well as the previous two draws.
+            </p>
+          </div>
+        </section>
+
+        <!-- Content Body -->
+        <section class="lotto-calculator__content-body">
+          <!-- Form to Enter Date + Time -->
+          <div>
+            <h2 class="lotto-calculator__content-title">Enter a Date and Time</h2>
+            <div class="lotto-calculator__form-container">
+              <form id="userLottoForm" class="lotto-calculator__form">
+                <input type="datetime-local" id="selectedDate" name="selectedDate" />
+                <button type="submit">Submit</button>
+              </form>
+              <p id="error-message" class="error-message"></p>
+            </div>
+          </div>
+          <!-- Table for Lotto Draw Dates-->
+          <div class="lotto-calculator__table-container">
+            <table class="lotto-calculator__table">
+              <thead>
+                <tr>
+                  <th>Draw Date</th>
+                  <th>Past or Future</th>
+                </tr>
+              </thead>
+              <tbody id="lotto-calculator-result-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
