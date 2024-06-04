@@ -2,7 +2,8 @@
 export function generateLottoDrawDates(selectedDate) {
   const lottoDrawDates = [];
   /*
-  lottoDrawDate helps calculate the previous, next and following lotto draw dates which are added to the lottoDrawDates list. 
+  lottoDrawDate helps calculate the previous, next and following lotto draw dates which are added to the lottoDrawDates list. This variable 
+  is initialized by calling getNextLottoDraw(selectedDate) to find the next draw date from the selected date.
   Given that we know the next draw date, this will be used as a starting point to calculate the previous and following draw dates.
   Note: The getNextLottoDraw function checks the day of the week and hours to determine the next draw date (Wednesday or Saturday at 
   8 PM). For instance, if the selected date is Tuesday 12pm, the next draw date will be Wednesday at 8 PM.
